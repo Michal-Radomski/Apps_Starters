@@ -12,7 +12,22 @@ const config: webpack.Configuration = {
   devtool: process.env.NODE_EVN === "development" ? "inline-source-map" : "source-map",
   target: "browserslist",
   output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true, publicPath: "" },
-  devServer: { static: "./dist", port: 3000, open: false, hot: true },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "./dist"),
+      watch: true,
+    },
+    port: 3000,
+    open: false,
+    hot: true,
+    liveReload: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
+  },
+  optimization: {
+    minimize: true,
+  },
   module: {
     rules: [
       {
