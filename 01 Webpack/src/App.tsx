@@ -1,10 +1,8 @@
-//* staticDev, ts-ignore
-
+//* staticDev
 import React from "react";
 import styled from "styled-components";
 
 import "./App.scss";
-// @ts-ignore
 import variableColors from "./_App.module.scss";
 
 const { primaryColor, dangerColor, warningColor } = variableColors;
@@ -20,7 +18,11 @@ const HeaderContainer = styled.div<{ $color: string }>`
   }
 `;
 
-function App(): JSX.Element {
+if (module.hot) {
+  module.hot.accept();
+}
+
+const App = (): JSX.Element => {
   return (
     <React.Fragment>
       <HeaderContainer $color={primaryColor}>
@@ -33,6 +35,6 @@ function App(): JSX.Element {
       </HeaderContainer>
     </React.Fragment>
   );
-}
+};
 
 export default App;
