@@ -1,0 +1,12 @@
+{
+  "name": "01-custom_webpack_configuration",
+  "version": "1.0.0",
+  "description": "custom_webpack_configuration",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --hot",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
