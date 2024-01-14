@@ -4,14 +4,20 @@ import "webpack-dev-server";
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+// console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
+
 const config: webpack.Configuration = {
-  mode: "development",
+  mode: process.env.NODE_ENV as "development" | "production",
   entry: "./src/main.tsx",
-  devtool: "inline-source-map",
+  devtool: process.env.NODE_EVN === "development" ? "inline-source-map" : "source-map",
   output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true, publicPath: "" },
   devServer: { static: "./dist", port: 3000, open: false, hot: true },
   module: {
     rules: [
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
       { test: /\.txt/, type: "asset/source" },
       {
         test: /\.(png|jpg|jpeg|gif|ttf)$/i,

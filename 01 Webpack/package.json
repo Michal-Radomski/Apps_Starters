@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "custom_webpack_configuration",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
-    "build": "webpack --mode production"
+    "start": "clear && NODE_ENV=development webpack-dev-server --mode development --hot --config webpack.config.ts",
+    "build": "clear && NODE_ENV=production webpack --mode production --config webpack.config.ts"
   },
   "keywords": [],
   "author": "",
