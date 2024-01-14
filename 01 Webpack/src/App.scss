@@ -1,4 +1,6 @@
-$background-color: whitesmoke;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+@import "./_App.module";
 
 *,
 *::after,
@@ -13,7 +15,8 @@ html {
 body {
   box-sizing: border-box;
   margin: 0;
-  background-color: $background-color;
+  background-color: $app-background-whiteSmoke;
+  color: $dark-color;
   width: 100%;
   max-width: 1920px;
   margin-left: auto;
