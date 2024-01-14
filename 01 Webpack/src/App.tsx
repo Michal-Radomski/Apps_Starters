@@ -20,8 +20,8 @@ function App(): JSX.Element {
     <React.Fragment>
       <HeaderContainer $color={primaryColor}>
         <h1 className="text-center">App Header</h1>
-        <p className="text-muted">App paragraph - text-muted</p>
-        <p className="custom-text">App paragraph - custom-text</p>
+        <p className="text-muted">Paragraph - text-muted</p>
+        <p className="custom-text">Paragraph - custom-text</p>
       </HeaderContainer>
     </React.Fragment>
   );

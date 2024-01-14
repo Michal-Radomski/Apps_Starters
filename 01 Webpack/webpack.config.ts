@@ -8,10 +8,11 @@ const config: webpack.Configuration = {
   mode: "development",
   entry: "./src/main.tsx",
   devtool: "inline-source-map",
-  output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true },
-  devServer: { static: "./dist", port: 3000, open: false },
+  output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true, publicPath: "" },
+  devServer: { static: "./dist", port: 3000, open: false, hot: true },
   module: {
     rules: [
+      { test: /\.txt/, type: "asset/source" },
       {
         test: /\.(png|jpg|jpeg|gif|ttf)$/i,
         type: "asset/resource",
@@ -22,10 +23,10 @@ const config: webpack.Configuration = {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
-      //* V1
+      //* V1: ts-loader + babel-loader
       // { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
       // { test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ },
-      //* V2
+      //* V2: only babel-loader
       {
         test: /\.(jsx?|tsx?)$/,
         exclude: /node_modules/,
