@@ -1,6 +1,7 @@
 import path from "path";
 import webpack from "webpack";
 import "webpack-dev-server";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -11,7 +12,7 @@ const config: webpack.Configuration = {
   entry: "./src/main.tsx",
   devtool: process.env.NODE_EVN === "development" ? "inline-source-map" : "source-map",
   target: "browserslist",
-  output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true, publicPath: "" },
+  output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true, publicPath: "", iife: true },
   devServer: {
     static: {
       directory: path.resolve(__dirname, "./dist"),
@@ -40,10 +41,12 @@ const config: webpack.Configuration = {
         type: "asset/resource",
       },
       { test: /\.(svg)$/, type: "asset/inline" },
-      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      // { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, "css-loader"] },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        // use: ["style-loader", "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       //* V1: ts-loader + babel-loader
       // { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
@@ -57,7 +60,13 @@ const config: webpack.Configuration = {
     ],
   },
   resolve: { extensions: [".tsx", ".ts", ".js", "jsx"] },
-  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html", favicon: "./public/favicon.svg" })],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].chunk_css.css",
+    }),
+    new HtmlWebpackPlugin({ template: "./public/index.html", favicon: "./public/favicon.svg" }),
+  ],
 };
 
 export default config;
