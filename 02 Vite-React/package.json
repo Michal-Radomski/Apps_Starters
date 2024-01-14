@@ -1,0 +1,26 @@
+{
+  "name": "02_vite-react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "clear && vite",
+    "build": "clear && tsc && vite build",
+    "preview": "clear && vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "sass": "^1.69.7",
+    "sass-loader": "^13.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}
