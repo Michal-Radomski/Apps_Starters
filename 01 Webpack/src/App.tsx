@@ -1,3 +1,5 @@
+//* staticDev, ts-ignore
+
 import React from "react";
 import styled from "styled-components";
 
@@ -5,13 +7,16 @@ import "./App.scss";
 // @ts-ignore
 import variableColors from "./_App.module.scss";
 
-const { primaryColor, dangerColor } = variableColors;
+const { primaryColor, dangerColor, warningColor } = variableColors;
 
 const HeaderContainer = styled.div<{ $color: string }>`
   border: 1px solid;
   border-color: ${(props) => props.$color};
   & p.custom-text {
     color: ${dangerColor};
+  }
+  div:has(p) {
+    background-color: ${warningColor};
   }
 `;
 
@@ -22,6 +27,9 @@ function App(): JSX.Element {
         <h1 className="text-center">App Header</h1>
         <p className="text-muted">Paragraph - text-muted</p>
         <p className="custom-text">Paragraph - custom-text</p>
+        <div>
+          <p>This div has p tag</p>
+        </div>
       </HeaderContainer>
     </React.Fragment>
   );
