@@ -10,6 +10,7 @@ const config: webpack.Configuration = {
   mode: process.env.NODE_ENV as "development" | "production",
   entry: "./src/main.tsx",
   devtool: process.env.NODE_EVN === "development" ? "inline-source-map" : "source-map",
+  target: "browserslist",
   output: { path: path.join(__dirname, "/dist"), filename: "bundle.js", clean: true, publicPath: "" },
   devServer: { static: "./dist", port: 3000, open: false, hot: true },
   module: {
