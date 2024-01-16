@@ -1,7 +1,7 @@
 {
-  "name": "04_grunt_html_ts_config",
+  "name": "04_gulp_html_ts_config",
   "version": "1.0.0",
-  "description": "Custom Grunt HTML TS config",
+  "description": "Custom Gulp HTML TS config",
   "scripts": {
     "start": "clear && gulp"
   },

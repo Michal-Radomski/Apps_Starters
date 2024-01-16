@@ -8,6 +8,6 @@ Custom apps starters
 
 3. Custom Vite config: HTML, Sass , Bootstrap 5 and TypeScript
 
-4. Custom GulpJS config: HTML, Sass and TypeScript - to be continued
+4. Custom GulpJS config: HTML, Sass, Bootstrap 5 and TypeScript
 
-5. Custom Webpack 5 config: ExpressJS NodeJS and TypeScript - to be continued
+5. Custom Webpack 5 config: ExpressJS NodeJS and TypeScript
