@@ -17,7 +17,7 @@ const ts = require("gulp-typescript");
 
 const tsProject = ts.createProject("tsconfig.json");
 
-// File paths
+//* File paths
 const files = {
   sassPath: "src/**/*.scss",
   // jsPath: "src/**/*.js",
@@ -29,6 +29,7 @@ const files = {
   data: "src/data/**/*",
 };
 
+//* HTML
 function htmlTask() {
   return src([files.htmlPath, files.favIcon])
     .pipe(gulpCopy("dist", { prefix: 1 }))
@@ -40,15 +41,15 @@ function htmlTask() {
 //   return src(files.images).pipe(dest("dist/img")).pipe(browserSync.stream());
 // }
 
-function pluginsTask() {
-  return src(files.plugins).pipe(dest("dist/plugins")).pipe(browserSync.stream());
-}
+// function pluginsTask() {
+//   return src(files.plugins).pipe(dest("dist/plugins")).pipe(browserSync.stream());
+// }
 
-function dataTask() {
-  return src(files.data).pipe(dest("dist/data")).pipe(browserSync.stream());
-}
+// function dataTask() {
+//   return src(files.data).pipe(dest("dist/data")).pipe(browserSync.stream());
+// }
 
-// Sass to CSS
+//* Sass to CSS
 function sassTask() {
   return src(files.sassPath)
     .pipe(sourcemaps.init())
@@ -67,7 +68,7 @@ function sassTask() {
     .pipe(browserSync.stream());
 }
 
-// // JS function
+// JS function
 // function jsTask() {
 //   return src([files.jsPath])
 //     .pipe(uglify())
@@ -80,6 +81,7 @@ function sassTask() {
 //     .pipe(browserSync.stream());
 // }
 
+//* TS
 function tsTask() {
   return src(files.tsPath)
     .pipe(sourcemaps.init())
@@ -91,7 +93,7 @@ function tsTask() {
     .pipe(browserSync.stream());
 }
 
-// Browser Sync
+//* Browser Sync
 function browser_Sync() {
   browserSync.init({
     files: ["./dist/**/*."],
@@ -104,17 +106,17 @@ function browser_Sync() {
   });
 }
 
-// Watch files
+//* Watch files
 function watchFiles() {
   watch(files.htmlPath, htmlTask);
   // watch(files.images, imgTask);
-  watch(files.plugins, pluginsTask);
-  watch(files.data, dataTask);
+  // watch(files.plugins, pluginsTask);
+  // watch(files.data, dataTask);
   watch(files.sassPath, sassTask);
   // watch(files.jsPath, jsTask);
   watch(files.tsPath, tsTask);
   watch(files.htmlPath).on("change", browserSync.reload);
 }
 
-// Export
+//* Export
 exports.default = parallel(watchFiles, browser_Sync);
