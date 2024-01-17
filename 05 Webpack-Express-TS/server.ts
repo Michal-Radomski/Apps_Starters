@@ -1,3 +1,7 @@
+//* Test routes:
+//* MongoDB: http://localhost:5000/api/mongo-users
+//* PostgreSQL:
+
 import path from "path";
 import http from "http";
 import https from "https";
@@ -49,12 +53,12 @@ app.use(
 app.use("/api", indexRouter);
 
 //* Mongo DB
-// mongoose
-//   .connect(process.env.MONGO_URL as string)
-//   .then((con: { connection: { host: string } }) => {
-//     console.log(`MongoDB Database connected with HOST: ${con.connection.host}`);
-//   })
-//   .catch((error: string) => console.log("Mongo DB Error => ", error));
+mongoose
+  .connect(process.env.MONGO_URL as string)
+  .then((con: { connection: { host: string } }) => {
+    console.log(`MongoDB Database connected with HOST: ${con.connection.host}`);
+  })
+  .catch((error: string) => console.log("Mongo DB Error => ", error));
 
 //* PostgreSQL
 // connectDb();
