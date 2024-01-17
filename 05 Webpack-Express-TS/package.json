@@ -7,7 +7,7 @@
     "server": "clear && NODE_ENV=development nodemon server.ts",
     "client": "BROWSER=NONE npm start --prefix ../client/",
     "dev": "clear && concurrently \"npm run server\"  \"npm run client\"",
-    "build": "webpack --config ./webpack.config.js --mode production"
+    "build": "clear && NODE_ENV=production webpack --mode production --config webpack.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,8 @@
     "@types/pg": "^8.10.9",
     "concurrently": "^8.2.2",
     "nodemon": "^3.0.3",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }
