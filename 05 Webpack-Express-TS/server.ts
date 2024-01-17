@@ -1,6 +1,7 @@
-//@ Webpack!
 import path from "path";
 import http from "http";
+import https from "https";
+import fs from "fs";
 
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -22,8 +23,16 @@ import indexRouter from "./indexRouter";
 //* The server
 const app: Express = express();
 
+const corsOptions = {
+  origin: true,
+  methods: ["GET", "POST"],
+  preflightContinue: false,
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
+
 //* Middlewares
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("combined"));
@@ -56,6 +65,10 @@ app.use("/api", indexRouter);
 //   })
 //   .catch((error) => console.error({ error }));
 
+//* Favicon
+app.get("/favicon.ico", (_req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname + "/favicon.svg"));
+});
 //* Test route
 app.get("/", (req: Request, res: Response) => {
   console.log("req.ip:", req.ip);
@@ -72,19 +85,36 @@ app.get("/", (req: Request, res: Response) => {
 //   });
 // }
 
-//* Port
-const port = (process.env.PORT || 5000) as number;
+const credentials = {
+  key: fs.readFileSync(process.env.SERVER_KEY as string, "utf-8"),
+  cert: fs.readFileSync(process.env.SERVER_CRT as string, "utf-8"),
+};
+// console.log("credentials:", credentials);
 
-const server = http.createServer(app);
-server.listen({ port: port }, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+//* Port
+const portHTTP = (process.env.PORT || 5000) as number;
+const portHTTPS = (process.env.HTTPS_PORT || 5443) as number;
+
+const httpServer = http.createServer(app);
+httpServer.listen({ port: portHTTP }, () => {
+  console.log(`Server is listening at http://localhost:${portHTTP}`);
   // For testing only
   console.log("Current Time:", new Date().toLocaleTimeString());
 });
 
+//* HTTPS Server
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen({ port: portHTTPS }, () => {
+  console.log(`Server HTTPS is listening at https://localhost:${portHTTPS}`);
+  // For testing only
+  console.log("Current Time:", new Date().toLocaleTimeString());
+});
+
+// console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
+
 //* Generate JWT secret string
-const JWT_Secret = require("crypto").randomBytes(48).toString("hex");
-console.log({ JWT_Secret }, JWT_Secret.length);
+// const JWT_Secret = require("crypto").randomBytes(48).toString("hex");
+// console.log({ JWT_Secret }, JWT_Secret.length);
 
 //* Generate JWT secret string - V2 -> console!
 // openssl rand -hex 64
