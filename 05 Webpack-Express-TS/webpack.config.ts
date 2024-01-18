@@ -16,7 +16,10 @@ const config: webpack.Configuration = {
   },
   module: {
     rules: [
-      { test: /\.ts$/, use: "ts-loader", exclude: /node_modules/ },
+      //* V1: ts-loader
+      // { test: /\.ts$/, use: "ts-loader", exclude: /node_modules/ },
+      //* V2: babel-loader
+      { test: /\.(js|ts)$/, exclude: /node_modules/, use: { loader: "babel-loader" } },
       { test: /\.(svg)$/, type: "asset/inline" },
     ],
   },
