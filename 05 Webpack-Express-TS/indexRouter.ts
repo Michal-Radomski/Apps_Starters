@@ -1,9 +1,13 @@
 import express, { Router } from "express";
 
-import { getUsers } from "./userController";
+import { getUsers, getWholeList } from "./controller";
 
 const indexRouter: Router = express.Router();
 
+//* MongoDB - list of users
 indexRouter.get("/mongo-users", getUsers);
+
+//* PostgreSQL - list of todos
+indexRouter.get("/psql/all-todos", getWholeList);
 
 export default indexRouter;

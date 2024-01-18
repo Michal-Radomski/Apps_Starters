@@ -1,6 +1,6 @@
-//* Test routes:
-//* MongoDB: http://localhost:5000/api/mongo-users
-//* PostgreSQL:
+//* Test route: http://localhost:5000, https://localhost:5443/
+//* Test - MongoDB: http://localhost:5000/api/mongo-users, https://localhost:5443/api/mongo-users
+//* Test - PostgreSQL: http://localhost:5000/api/psql/all-todos, https://localhost:5443/api/psql/all-todos
 
 import path from "path";
 import http from "http";
@@ -10,19 +10,19 @@ import fs from "fs";
 import * as dotenv from "dotenv";
 dotenv.config();
 import express, { Express, Request, Response } from "express";
-import mongoose from "mongoose";
+import mongoose from "mongoose"; //! Check if necessary! + (pg!)
 import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import helmet from "helmet";
-import cookieParser from "cookie-parser";
+// import cookieParser from "cookie-parser"; //! Check if necessary!
 
 //* Import routes
 import indexRouter from "./indexRouter";
 
 //* Import DB connection/ pool
-// import pool from "./psql";
-// import { connectDb } from "./psql"
+import pool from "./psql";
+// import { connectDb } from "./psql";
 
 //* The server
 const app: Express = express();
@@ -37,6 +37,7 @@ const corsOptions = {
 
 //* Middlewares
 app.use(cors(corsOptions));
+// app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("combined"));
@@ -62,12 +63,12 @@ mongoose
 
 //* PostgreSQL
 // connectDb();
-// pool
-//   .connect()
-//   .then(() => {
-//     console.log("Connected to the PostgreSQL DB successfully...");
-//   })
-//   .catch((error) => console.error({ error }));
+pool
+  .connect()
+  .then(() => {
+    console.log("Connected to the PostgreSQL DB successfully...");
+  })
+  .catch((error) => console.error({ error }));
 
 //* Favicon
 app.get("/favicon.ico", (_req: Request, res: Response) => {
