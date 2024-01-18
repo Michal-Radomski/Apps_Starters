@@ -2,12 +2,13 @@
   "name": "05_webpack5_express",
   "version": "1.0.0",
   "description": "Custom Webpack 5, Express.js and TS config",
-  "main": "server.ts",
+  "main": "./src/server.ts",
   "scripts": {
-    "server": "clear && NODE_ENV=development nodemon server.ts",
+    "server": "clear && NODE_ENV=development nodemon ./src/server.ts",
     "client": "BROWSER=NONE npm start --prefix ../client/",
     "dev": "clear && concurrently \"npm run server\"  \"npm run client\"",
-    "build": "clear && NODE_ENV=production webpack --mode production --config webpack.config.ts"
+    "build": "clear && NODE_ENV=production webpack --mode production --config webpack.config.ts",
+    "done": "clear && node dist/bundleApi.js"
   },
   "keywords": [],
   "author": "",

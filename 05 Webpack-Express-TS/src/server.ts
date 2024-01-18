@@ -72,7 +72,7 @@ pool
 
 //* Favicon
 app.get("/favicon.ico", (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname + "/favicon.svg"));
+  res.sendFile(path.join(__dirname + "/src/favicon.svg"));
 });
 //* Test route
 app.get("/", (req: Request, res: Response) => {

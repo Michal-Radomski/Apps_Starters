@@ -3,9 +3,9 @@ import webpack from "webpack";
 
 const config: webpack.Configuration = {
   mode: "production",
-  // devtool: "source-map",
-  devtool: false,
-  entry: { main: "./server.ts" },
+  devtool: "source-map",
+  // devtool: false,
+  entry: { main: "./src/server.ts" },
   output: { path: path.join(__dirname, "/dist"), filename: "bundleApi.js", clean: true, publicPath: "", iife: true },
   target: "node",
   optimization: {

@@ -10,4 +10,5 @@ Custom apps starters
 
 4. Custom GulpJS config: HTML, Sass, Bootstrap 5 and TypeScript
 
-5. Custom Webpack 5 config: ExpressJS NodeJS and TypeScript (+ MongoDB (Mongoose) + PostgreSQL)
+5. Custom Webpack 5 config: ExpressJS NodeJS and TypeScript (+ MongoDB (Mongoose) + PostgreSQL) Todo: Webpack warnings while
+   building
