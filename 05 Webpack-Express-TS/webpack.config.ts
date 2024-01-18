@@ -3,7 +3,8 @@ import webpack from "webpack";
 
 const config: webpack.Configuration = {
   mode: "production",
-  devtool: "source-map",
+  // devtool: "source-map",
+  devtool: false,
   entry: { main: "./server.ts" },
   output: { path: path.join(__dirname, "/dist"), filename: "bundleApi.js", clean: true, publicPath: "", iife: true },
   target: "node",
