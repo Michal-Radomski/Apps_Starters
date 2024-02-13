@@ -15,6 +15,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import helmet from "helmet";
+import compression from "compression";
 // import cookieParser from "cookie-parser"; //! Check if necessary!
 
 //* Import routes
@@ -49,6 +50,8 @@ app.use(
     crossOriginOpenerPolicy: false,
   })
 );
+// Compress all responses
+app.use(compression({ level: 6 }));
 
 //* Route middleware
 app.use("/api", indexRouter);
@@ -72,7 +75,7 @@ pool
 
 //* Favicon
 app.get("/favicon.ico", (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname + "/src/favicon.svg"));
+  res.sendFile(path.join(__dirname + "/favicon.svg"));
 });
 //* Test route
 app.get("/", (req: Request, res: Response) => {
