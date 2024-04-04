@@ -1,3 +1,5 @@
+// Todo: change name convention to: kebab-case eg: kebab-case.ts
+
 //* Test route: http://localhost:5000, https://localhost:5443/
 //* Test - MongoDB: http://localhost:5000/api/mongo-users, https://localhost:5443/api/mongo-users
 //* Test - PostgreSQL: http://localhost:5000/api/psql/all-todos, https://localhost:5443/api/psql/all-todos
