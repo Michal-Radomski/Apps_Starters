@@ -71,7 +71,7 @@ const App = (): JSX.Element => {
 
   React.useEffect(() => {
     (async function () {
-      await fetch("https://api.ipify.org/?format=json")
+      await fetch(process.env.REACT_APP_Api_URL as string)
         .then((data) => data.json())
         .then((res) => {
           // console.log("res:", res);
