@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "./App.scss";
 import variableColors from "./_App.module.scss";
 import { getAddressIP } from "./redux/actions";
+import { useAppDispatch } from "./redux/hooks";
 
 const { primaryColor, dangerColor, warningColor } = variableColors;
 
@@ -23,6 +24,49 @@ if (module.hot) {
 }
 
 const App = (): JSX.Element => {
+  const dispatch: Dispatch = useAppDispatch();
+
+  // const [
+  //   busesFromRedux,
+  //   activeBlocksFromRedux,
+  //   vehicleSiriData,
+  //   loadingTable,
+  //   routesDetails,
+  //   bearerToken,
+  //   mapSettingsFromRedux,
+  //   currentCalendar,
+  //   scheduleRelationshipTripsArray,
+  //   allTripsArray,
+  //   busesIds,
+  // ]: [
+  //   { busesOnTime: BusInfo[]; busesTooFast: BusInfo[]; delayedBuses: BusInfo[]; remainingBuses: BusInfo[] },
+  //   ActiveBlock[],
+  //   VehicleSiriData[],
+  //   boolean,
+  //   RouteDetails[],
+  //   string,
+  //   MapSettings,
+  //   CurrentCalendar[],
+  //   CancelReenableTrip[],
+  //   TripPattern[],
+  //   string[]
+  // ] = useAppSelector(
+  //   (state: RootState) => [
+  //     state?.buses,
+  //     state?.activeBlocks?.routes,
+  //     state?.activeBlocks?.vehicleSiriData,
+  //     state?.constantValues?.loadingTable,
+  //     state?.routesInfo?.routesInfo,
+  //     state?.constantValues?.credentials?.access_token,
+  //     state?.constantValues?.mapSettings,
+  //     state?.constantValues?.currentCalendar,
+  //     state?.buses?.scheduleRelationshipTripsArray,
+  //     state?.routesInfo?.allTripsArray,
+  //     state?.constantValues?.busesIds,
+  //   ],
+  //   shallowEqual
+  // );
+
   const [addressIP, setAddressIP] = React.useState<string>("");
 
   React.useEffect(() => {
@@ -35,7 +79,7 @@ const App = (): JSX.Element => {
         })
         .catch((err) => console.log("err:", err));
 
-      await getAddressIP();
+      await dispatch(getAddressIP());
       await console.log("test");
     })();
   }, []);
