@@ -3,15 +3,14 @@ import axios from "axios";
 import { GET_ADDRESS_IP } from "./actionTypes";
 
 export const getAddressIP = () => async (dispatch: Dispatch) => {
-  console.log("getAddressIP");
-  const URL = "https://skyline.github.com/michal-radomski/2023.json";
-  console.log({ URL });
+  const URL = process.env.REACT_APP_Api_URL as string;
+  // console.log({ URL });
 
   await axios
     .get(URL)
-    .then((data) => {
-      console.log("data:", data);
-      // dispatch({ type: GET_ADDRESS_IP, payload: data });
+    .then(({ data }) => {
+      // console.log("data:", data);
+      dispatch({ type: GET_ADDRESS_IP, payload: data });
     })
     .catch((error) => {
       if (error.response) {

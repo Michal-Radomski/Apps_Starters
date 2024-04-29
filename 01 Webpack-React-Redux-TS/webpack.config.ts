@@ -2,6 +2,7 @@ import path from "path";
 import webpack from "webpack";
 import "webpack-dev-server";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import Dotenv from "dotenv-webpack";
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -66,6 +67,7 @@ const config: webpack.Configuration = {
       chunkFilename: "[id].chunk_css.css",
     }),
     new HtmlWebpackPlugin({ template: "./public/index.html", favicon: "./public/favicon.svg" }),
+    new Dotenv(),
   ],
 };
 
