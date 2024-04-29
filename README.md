@@ -2,9 +2,9 @@
 
 Custom apps starters
 
-1. Custom Webpack 5 config: Babel, ReactJS, Sass, TypeScript, Styled-Components and Browserslist
+1. Custom Webpack 5 config: Babel, ReactJS, Redux, Sass, TypeScript, Styled-Components and Browserslist
 
-2. Custom Vite config: ReactJS, Sass, TypeScript, Styled-Components and Browserslist
+2. Custom Vite config: ReactJS, Redux, Sass, TypeScript, Styled-Components and Browserslist
 
 3. Custom Vite config: HTML, Sass , Bootstrap 5 and TypeScript
 
