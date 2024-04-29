@@ -5,7 +5,7 @@ import { GET_ADDRESS_IP } from "./actionTypes";
 export const getAddressIP =
   () =>
   async (dispatch: Dispatch): Promise<void> => {
-    const URL = process.env.REACT_APP_Api_URL as string;
+    const URL = process.env.APP_Api_URL as string;
     // console.log({ URL });
 
     await axios
