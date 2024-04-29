@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import "./App.scss";
 import variableColors from "./_App.module.scss";
+import { getAddressIP } from "./redux/actions";
 
 const { primaryColor, dangerColor, warningColor } = variableColors;
 
@@ -22,6 +23,23 @@ if (module.hot) {
 }
 
 const App = (): JSX.Element => {
+  const [addressIP, setAddressIP] = React.useState<string>("");
+
+  React.useEffect(() => {
+    (async function () {
+      await fetch("https://api.ipify.org/?format=json")
+        .then((data) => data.json())
+        .then((res) => {
+          // console.log("res:", res);
+          setAddressIP(res?.ip);
+        })
+        .catch((err) => console.log("err:", err));
+
+      await getAddressIP();
+      await console.log("test");
+    })();
+  }, []);
+
   return (
     <React.Fragment>
       <HeaderContainer $color={primaryColor}>
@@ -31,6 +49,7 @@ const App = (): JSX.Element => {
         <div>
           <p>This div has p tag</p>
         </div>
+        {addressIP ? <React.Fragment>{`Your IP address is ${addressIP}`}</React.Fragment> : null}
       </HeaderContainer>
     </React.Fragment>
   );

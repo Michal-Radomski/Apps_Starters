@@ -23,6 +23,7 @@
     "browserslist": "^4.22.2",
     "css-loader": "^6.9.0",
     "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.7.7",
     "sass": "^1.69.7",
     "sass-loader": "^13.3.3",
     "style-loader": "^3.3.4",
@@ -31,12 +32,16 @@
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
-    "mini-css-extract-plugin": "^2.7.7"
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.3.0",
+    "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.1",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
     "styled-components": "^6.1.8"
   },
   "browserslist": {
