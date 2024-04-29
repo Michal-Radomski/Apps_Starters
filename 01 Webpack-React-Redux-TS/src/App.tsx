@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { shallowEqual } from "react-redux";
 
 import "./App.scss";
 import variableColors from "./_App.module.scss";
 import { getAddressIP } from "./redux/actions";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
-import { shallowEqual } from "react-redux";
 
 const { primaryColor, dangerColor, warningColor } = variableColors;
 
@@ -32,16 +32,18 @@ const App = (): JSX.Element => {
   const [addressIP, setAddressIP] = React.useState<string>("");
 
   React.useEffect(() => {
-    (async function () {
-      // await fetch(process.env.REACT_APP_Api_URL as string)
-      //   .then((data) => data.json())
-      //   .then((res) => {
-      //     // console.log("res:", res);
-      //     setAddressIP(res?.ip);
-      //   })
-      //   .catch((err) => console.log("err:", err));
-      await dispatch(getAddressIP());
-    })();
+    setTimeout(() => {
+      (async function (): Promise<void> {
+        // await fetch(process.env.REACT_APP_Api_URL as string)
+        //   .then((data) => data.json())
+        //   .then((res) => {
+        //     // console.log("res:", res);
+        //     setAddressIP(res?.ip);
+        //   })
+        //   .catch((err) => console.log("err:", err));
+        await dispatch(getAddressIP());
+      })();
+    }, 1000);
   }, []);
 
   React.useEffect(() => {
@@ -59,7 +61,11 @@ const App = (): JSX.Element => {
         <div>
           <p>This div has p tag</p>
         </div>
-        {addressIP ? <React.Fragment>{`Your IP address is ${addressIP}`}</React.Fragment> : null}
+        {addressIP ? (
+          <React.Fragment>
+            <p className="text-center">{`Your IP address is ${addressIP}`}</p>
+          </React.Fragment>
+        ) : null}
       </HeaderContainer>
     </React.Fragment>
   );
