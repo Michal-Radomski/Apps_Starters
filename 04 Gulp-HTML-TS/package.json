@@ -16,7 +16,6 @@
     "@types/gulp-sass": "^5.0.4",
     "@types/gulp-sourcemaps": "^0.0.38",
     "@types/gulp-uglify": "^3.0.11",
-    "@types/leaflet": "^1.9.8",
     "@types/node": "^20.11.3",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^3.0.2",
