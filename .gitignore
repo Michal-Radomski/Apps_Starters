@@ -13,4 +13,5 @@ node_modules/
 .vscode/
 build/
 dist/
+dist2/
 sslCert/
