@@ -38,6 +38,15 @@ const corsOptions = {
   credentials: true,
 };
 
+//* Custom headers example
+// app.use((_req, res, next): void => {
+//   // Attach CORS headers
+//   // Required when using a detached backend (that runs on a different domain)
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "GET,POST");
+//   next();
+// });
+
 //* Middlewares
 app.use(cors(corsOptions));
 // app.use(cookieParser());
