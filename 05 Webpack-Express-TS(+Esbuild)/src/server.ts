@@ -123,7 +123,7 @@ httpServer.listen({ port: portHTTP }, () => {
 
 //* HTTPS Server
 const httpsServer = https.createServer(credentials, app);
-httpsServer.listen({ port: portHTTPS }, () => {
+httpsServer.listen({ port: portHTTPS }, (): void => {
   console.log(`Server HTTPS is listening at https://localhost:${portHTTPS}`);
   // For testing only
   console.log("Current Time:", new Date().toLocaleTimeString());
