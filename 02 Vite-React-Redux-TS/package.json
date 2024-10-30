@@ -23,8 +23,7 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-legacy": "^5.2.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "sass": "^1.69.7",
-    "sass-loader": "^13.3.3",
+    "sass": "^1.80.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
