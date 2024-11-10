@@ -47,7 +47,21 @@ const config: webpack.Configuration = {
       {
         test: /\.s[ac]ss$/i,
         // use: ["style-loader", "css-loader", "sass-loader"],
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              api: "modern-compiler",
+              sassOptions: {
+                quietDeps: true,
+                sourceMap: true,
+              },
+            },
+          },
+        ],
       },
       //* V1: ts-loader + babel-loader
       // { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },

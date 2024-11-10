@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { shallowEqual } from "react-redux";
 
-import "./App.scss";
-import variableColors from "./_App.module.scss";
+import "./styles/App.scss";
+import variableColors from "./styles/_App.module.scss";
 import { getAddressIP } from "./redux/actions";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 
