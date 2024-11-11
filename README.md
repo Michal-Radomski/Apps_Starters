@@ -14,3 +14,5 @@ Custom apps starters
    Todo: Webpack warnings while building
 
 6. Custom Next.js 15 config with Sass and TS
+
+7. Custom React (Vite) and Node/Express in TS monorepo config

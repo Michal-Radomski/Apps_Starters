@@ -1,0 +1,9 @@
+{
+  "name": "@7_gtfs-viewer/api",
+  "version": "1.0.0",
+  "main": "api.ts",
+  "keywords": [],
+  "author": "Michal Radomski <michalra@op.pl>",
+  "license": "UNLICENSED",
+  "description": "Server side application that visualize GTFS data as routes and timetables."
+}

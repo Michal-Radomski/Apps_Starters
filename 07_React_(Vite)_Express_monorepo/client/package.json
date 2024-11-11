@@ -1,0 +1,10 @@
+{
+  "name": "@7_gtfs-viewer/client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "keywords": [],
+  "author": "Michal Radomski <michalra@op.pl>",
+  "license": "UNLICENSED",
+  "description": "Client side application that visualize GTFS data as routes and timetables."
+}

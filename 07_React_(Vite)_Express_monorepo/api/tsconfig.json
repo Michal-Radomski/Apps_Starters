@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["Dom", "DOM.Iterable", "ESNext"],
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
+    "module": "NodeNext",
+    "moduleResolution": "nodeNext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "skipLibCheck": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": true,
+    "outDir": "./dist",
+    "noEmit": false
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}
