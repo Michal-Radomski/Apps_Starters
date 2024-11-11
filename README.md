@@ -12,3 +12,5 @@ Custom apps starters
 
 5. Custom Webpack 5/Esbuild config: Babel, ExpressJS, NodeJS and TypeScript (+ MongoDB (Mongoose) + PostgreSQL)\
    Todo: Webpack warnings while building
+
+6. Custom Next.js 15 config with Sass and TS
