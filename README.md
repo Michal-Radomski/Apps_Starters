@@ -15,4 +15,4 @@ Custom apps starters
 
 6. Custom Next.js 15 config with Sass and TS
 
-7. Custom React (Vite) and Node/Express in TS monorepo config
+7. Custom React (Vite) and Node/Express in TS monorepo config (Todo: add other scripts)

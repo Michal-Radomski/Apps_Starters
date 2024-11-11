@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2016",
     "lib": ["Dom", "DOM.Iterable", "ESNext"],
     "experimentalDecorators": false,
     "emitDecoratorMetadata": false,
-    "module": "NodeNext",
-    "moduleResolution": "nodeNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "typeRoots": ["/usr/local/lib/node_modules/@types"], //* Globally installed types in Ubuntu
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -16,8 +16,8 @@
     "skipLibCheck": true,
     "noImplicitThis": true,
     "strictPropertyInitialization": true,
-    "outDir": "./dist",
-    "noEmit": false
+    "sourceMap": true,
+    "outDir": "dist"
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules"]
