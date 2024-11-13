@@ -15,4 +15,5 @@ Custom apps starters
 
 6. Custom Next.js 15 config with Sass and TS
 
-7. React (Vite) Node/Express custom monorepo config in TS (Todo: add other scripts)
+7. React (Vite) Node/Express custom monorepo config in TS (Todo: add other scripts + eslint config:
+   'react-hooks/exhaustive-deps': 'warn')
