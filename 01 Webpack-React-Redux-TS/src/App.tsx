@@ -44,7 +44,7 @@ const App = (): JSX.Element => {
         await dispatch(getAddressIP());
       })();
     }, 1000);
-  }, []);
+  }, [dispatch]);
 
   React.useEffect(() => {
     if (fromReduxAddressIP) {

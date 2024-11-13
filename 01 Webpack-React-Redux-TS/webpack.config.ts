@@ -3,6 +3,7 @@ import webpack from "webpack";
 import "webpack-dev-server";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import Dotenv from "dotenv-webpack";
+import ESLintPlugin from "eslint-webpack-plugin";
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -74,7 +75,7 @@ const config: webpack.Configuration = {
       },
     ],
   },
-  resolve: { extensions: [".tsx", ".ts", ".js", "jsx"] },
+  resolve: { extensions: [".tsx", ".ts", ".js", ".jsx"] },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -82,6 +83,11 @@ const config: webpack.Configuration = {
     }),
     new HtmlWebpackPlugin({ template: "./public/index.html", favicon: "./public/favicon.svg" }),
     new Dotenv(),
+    new ESLintPlugin({
+      extensions: [".js", ".jsx", ".ts", ".tsx"], // Specify the file types to lint
+      emitWarning: true, // Emit warnings as part of the build process
+      emitError: false, // Set to true if you want to fail the build on errors
+    }),
   ],
 };
 
