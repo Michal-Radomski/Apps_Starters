@@ -21,7 +21,11 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error", // Enforces the rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Warns on missing dependencies
-    "react/react-in-jsx-scope": "off" // Disable if using React 17+
+    "react/react-in-jsx-scope": "off", // Disable if using React 17+
+    "no-duplicate-imports": "warn",
+    "sort-imports": "warn",
+    "no-unused-vars": "warn",
+    "source.fixAll.eslint": true
   },
   "settings": {
     "react": {
