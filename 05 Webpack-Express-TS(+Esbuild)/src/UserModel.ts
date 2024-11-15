@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document, models } from "mongoose";
 
 enum userRole {
   "user",
@@ -23,7 +23,9 @@ const userSchema: Schema = new mongoose.Schema(
     },
     role: { type: String, enum: userRole, default: "user" },
   },
-  { timestamps: true }
+  { timestamps: true, collection: "User" }
 );
 
-export default mongoose.model<IUser>("User", userSchema);
+const User = models?.User || mongoose.model<IUser>("User", userSchema);
+
+export default User;
