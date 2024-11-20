@@ -1,3 +1,4 @@
+// Todo: check if this works
 {
   "extends": [
     "eslint:recommended",
@@ -25,7 +26,8 @@
     "no-duplicate-imports": "warn",
     "sort-imports": "warn",
     "no-unused-vars": "warn",
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "no-undef": "error"
   },
   "settings": {
     "react": {
