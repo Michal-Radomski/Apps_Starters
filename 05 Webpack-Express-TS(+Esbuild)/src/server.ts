@@ -116,7 +116,7 @@ const portHTTPS = (process.env.HTTPS_PORT || 5443) as number;
 
 const httpServer = http.createServer(app);
 httpServer.listen({ port: portHTTP }, () => {
-  console.log(`Server is listening at http://localhost:${portHTTP}`);
+  console.log(`🚀 Server is listening at http://localhost:${portHTTP}`);
   // For testing only
   console.log("Current Time:", new Date().toLocaleTimeString());
 });
@@ -124,7 +124,7 @@ httpServer.listen({ port: portHTTP }, () => {
 //* HTTPS Server
 const httpsServer = https.createServer(credentials, app);
 httpsServer.listen({ port: portHTTPS }, (): void => {
-  console.log(`Server HTTPS is listening at https://localhost:${portHTTPS}`);
+  console.log(`🚀 Server HTTPS is listening at https://localhost:${portHTTPS}`);
   // For testing only
   console.log("Current Time:", new Date().toLocaleTimeString());
 });
