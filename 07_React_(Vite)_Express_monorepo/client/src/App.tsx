@@ -5,6 +5,7 @@ import axios from "axios";
 
 import "./styles/App.scss";
 import variableColors from "./styles/_App.module.scss";
+import { TestI } from "../../common/CommonInterfaces";
 
 const { textColor } = variableColors;
 
@@ -20,6 +21,12 @@ const AppContainer = styled.div`
 const App = (): JSX.Element => {
   // const testString = process.env.APP_Test_String as string;
   // console.log({ testString });
+
+  //* CommonInterfaces
+  const testValue: TestI = {
+    value: "test",
+  };
+  console.log("testValue:", testValue);
 
   const [testState, setTestState] = React.useState<string>("");
 

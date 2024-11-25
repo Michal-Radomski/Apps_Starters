@@ -15,6 +15,13 @@ import compression from "compression";
 //* Import routes
 import indexRouter from "./indexRouter";
 
+//* CommonInterfaces
+import { TestI } from "../common/CommonInterfaces";
+const testValue: TestI = {
+  value: "test",
+};
+console.log("testValue:", testValue);
+
 //* The server
 const app: Express = express();
 

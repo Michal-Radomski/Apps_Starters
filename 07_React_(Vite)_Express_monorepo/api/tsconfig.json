@@ -17,7 +17,12 @@
     "noImplicitThis": true,
     "strictPropertyInitialization": true,
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+
+    // * Custom
+    "paths": {
+      "@common/*": ["../common/*"]
+    }
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules"]
