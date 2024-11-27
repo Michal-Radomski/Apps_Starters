@@ -5,6 +5,6 @@
   "type": "module",
   "keywords": [],
   "author": "Michal Radomski <michalra@op.pl>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "Client side application that visualize GTFS data as routes and timetables."
 }

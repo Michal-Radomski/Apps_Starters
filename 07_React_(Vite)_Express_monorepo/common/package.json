@@ -1,0 +1,8 @@
+{
+  "name": "@07_react_express_monorepo/common",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Michal Radomski <michalra@op.pl>",
+  "license": "MIT",
+  "description": "Common staff application that visualize GTFS data as routes and timetables."
+}

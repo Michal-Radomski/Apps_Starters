@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["Dom", "DOM.Iterable", "ESNext"],
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "typeRoots": ["/usr/local/lib/node_modules/@types"], //* Globally installed types in Ubuntu
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "skipLibCheck": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": true,
+    "sourceMap": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}

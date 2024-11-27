@@ -4,6 +4,6 @@
   "main": "api.ts",
   "keywords": [],
   "author": "Michal Radomski <michalra@op.pl>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "Server side application that visualize GTFS data as routes and timetables."
 }
