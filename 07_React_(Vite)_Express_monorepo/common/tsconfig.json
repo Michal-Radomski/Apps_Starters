@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES2020",
     "lib": ["Dom", "DOM.Iterable", "ESNext"],
     "experimentalDecorators": false,
     "emitDecoratorMetadata": false,
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "commonjs", //* "ES2020"
+    "moduleResolution": "node", //* "Bundler"
     "typeRoots": ["/usr/local/lib/node_modules/@types"], //* Globally installed types in Ubuntu
     "resolveJsonModule": true,
     "esModuleInterop": true,
