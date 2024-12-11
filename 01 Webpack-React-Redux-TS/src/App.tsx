@@ -6,6 +6,7 @@ import "./styles/App.scss";
 import variableColors from "./styles/_App.module.scss";
 import { getAddressIP } from "./redux/actions";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import { Dispatch, RootState } from "./Interfaces";
 
 const { primaryColor, dangerColor, warningColor } = variableColors;
 
