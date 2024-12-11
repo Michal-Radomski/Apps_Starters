@@ -12,7 +12,7 @@ export default [
   pluginReact.configs.flat.recommended,
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    ignores: ["node_modules/**", "dist/**"],
+    ignores: ["node_modules/**", "dist/**", ".next/**"],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node, NodeJS: true, JSX: true },
       parser: typescriptParser,
@@ -51,3 +51,5 @@ export default [
     },
   },
 ];
+
+export const ignorePatterns = ["node_modules/**", "dist/**", ".next/**"];

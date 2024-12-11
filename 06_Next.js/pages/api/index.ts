@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
+import { ApiData } from "@/Interfaces";
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<ApiData>): void {
   console.log("req.method:", req.method);
 

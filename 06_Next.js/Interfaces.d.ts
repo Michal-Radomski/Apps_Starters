@@ -1,6 +1,6 @@
 // Types and interfaces
 
-interface ApiData {
+export interface ApiData {
   name: string;
   age: number;
 }
