@@ -15,6 +15,7 @@
     "sass": "^1.79.4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.16.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -23,6 +24,8 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "typescript": "^5"
+    "globals": "^15.13.0",
+    "typescript": "^5",
+    "typescript-eslint": "^8.18.0"
   }
 }
