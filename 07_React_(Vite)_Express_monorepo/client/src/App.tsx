@@ -33,20 +33,22 @@ const App = (): JSX.Element => {
   React.useEffect(() => {
     const apiUrl = "/api/test-route";
 
-    axios
-      .get(apiUrl)
-      .then(({ data }) => {
-        // console.log("data:", data);
-        const dataToReturn = data?.testData?.name;
-        setTestState(dataToReturn);
-      })
-      .catch((error) => {
-        // console.log("error:", error);
-        if (error instanceof Error) {
-          console.error("error?.message:", error?.message);
-        }
-      });
-  }, []);
+    if (testValue?.value) {
+      axios
+        .get(apiUrl)
+        .then(({ data }) => {
+          // console.log("data:", data);
+          const dataToReturn = data?.testData?.name;
+          setTestState(dataToReturn);
+        })
+        .catch((error) => {
+          // console.log("error:", error);
+          if (error instanceof Error) {
+            console.error("error?.message:", error?.message);
+          }
+        });
+    }
+  }, [testValue?.value]);
 
   return (
     <React.Fragment>
