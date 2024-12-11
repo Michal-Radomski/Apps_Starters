@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { GET_ADDRESS_IP } from "./actionTypes";
+import { Dispatch } from "../Interfaces";
 
 export const getAddressIP =
   () =>
@@ -24,6 +25,6 @@ export const getAddressIP =
         // console.log("error:", error);
         // throw error;
         // throw new Error("Error");
-      });
-    // .finally(() => console.log("Job done!"));
+      })
+      .finally(() => console.log("Job done!"));
   };
