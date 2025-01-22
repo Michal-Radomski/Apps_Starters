@@ -27,10 +27,11 @@ const app: Express = express();
 
 const corsOptions = {
   origin: true,
-  methods: ["POST", "GET"],
+  methods: ["POST", "GET", "OPTIONS"],
   preflightContinue: false,
   optionsSuccessStatus: 200,
   credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization", "Accept"], // Specify
 };
 
 //* Create /tmp/ folder for express-fileupload

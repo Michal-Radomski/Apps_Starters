@@ -32,10 +32,11 @@ const app: Express = express();
 
 const corsOptions = {
   origin: true,
-  methods: ["GET", "POST"],
+  methods: ["POST", "GET", "OPTIONS"],
   preflightContinue: false,
   optionsSuccessStatus: 200,
   credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization", "Accept"], // Specify
 };
 
 //* Custom headers example
