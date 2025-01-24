@@ -6,6 +6,7 @@ import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 
 // Todo: refactor eslint.config.mjs files!
+// Todo: check rules!
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   pluginJs.configs.recommended,
@@ -45,6 +46,18 @@ export default [
       "@typescript-eslint/no-unused-vars": "off",
       "source.fixAll.eslint": 0,
     },
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        args: "all",
+        argsIgnorePattern: "^_",
+        caughtErrors: "all",
+        caughtErrorsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        ignoreRestSiblings: true,
+      },
+    ],
     settings: {
       react: {
         version: "detect", // Automatically detects the version of React

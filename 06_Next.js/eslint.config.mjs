@@ -44,6 +44,18 @@ export default [
       "@typescript-eslint/no-unused-vars": "off",
       "source.fixAll.eslint": 0,
     },
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        args: "all",
+        argsIgnorePattern: "^_",
+        caughtErrors: "all",
+        caughtErrorsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        ignoreRestSiblings: true,
+      },
+    ],
     settings: {
       react: {
         version: "detect", // Automatically detects the version of React

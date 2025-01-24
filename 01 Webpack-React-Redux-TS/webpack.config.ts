@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
 
+// Todo: Add Eslint plugin!
 const config: webpack.Configuration = {
   mode: process.env.NODE_ENV as "development" | "production",
   entry: "./src/main.tsx",
