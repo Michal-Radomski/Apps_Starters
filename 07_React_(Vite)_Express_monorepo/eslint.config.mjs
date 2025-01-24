@@ -35,7 +35,7 @@ export default [
       "react-hooks/exhaustive-deps": "warn", // Warns on missing dependencies
       "no-duplicate-imports": "error",
       "sort-imports": "off",
-      "no-unused-vars": "warn",
+      "no-unused-vars": "off",
       "no-undef": "error",
       "no-extra-boolean-cast": "off",
       "@typescript-eslint/no-explicit-any": "off",
