@@ -5,20 +5,20 @@ import eslintPlugin from "vite-plugin-eslint2";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd(), "");
   // console.log("env:",env)
 
   return {
     server: {
       port: 3000,
-      // proxy: {
-      //   "/api": {
-      //     target: "", // Your backend server URL
-      //     changeOrigin: true, // Changes the origin of the host header to the target URL
-      //     // rewrite: (path) => path.replace(/^\/api/, ''), // Optionally rewrite the path
-      //   },
-      // },
+      proxy: {
+        "/api": {
+          target: "http://localhost:5000", // Your backend server URL
+          changeOrigin: true, // Changes the origin of the host header to the target URL
+          // rewrite: (path) => path.replace(/^\/api/, ''), // Optionally rewrite the path
+        },
+      },
     },
     define: {
       "process.env": env,
@@ -45,6 +45,9 @@ export default defineConfig(({ mode }) => {
           quietDeps: true,
         },
       },
+    },
+    build: {
+      outDir: "build", // Change the output directory from 'dist' to 'build'
     },
   };
 });
