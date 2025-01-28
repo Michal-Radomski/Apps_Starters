@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), ""); //* https://dev.to/boostup/uncaught-referenceerror-process-is-not-defined-12kg
   return {
     server: {
+      host: true,
       port: 3000,
     },
     define: {

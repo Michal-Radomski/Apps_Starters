@@ -11,6 +11,7 @@ export default defineConfig(({ mode }: { mode: string }) => {
 
   return {
     server: {
+      host: true,
       port: 3000,
       proxy: {
         "/api": {
