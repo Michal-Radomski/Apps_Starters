@@ -27,6 +27,9 @@ const config: webpack.Configuration = {
     devMiddleware: {
       writeToDisk: true,
     },
+    host: "0.0.0.0",
+    https: false,
+    compress: false,
   },
   optimization: {
     minimize: true,
