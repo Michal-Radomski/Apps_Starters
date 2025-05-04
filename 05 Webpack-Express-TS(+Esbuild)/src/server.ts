@@ -128,6 +128,7 @@ httpsServer.listen({ port: portHTTPS }, (): void => {
   console.log(`🚀 Server HTTPS is listening at https://localhost:${portHTTPS}`);
   // For testing only
   console.log("Current Time:", new Date().toLocaleTimeString());
+  // console.log('process.env.NODE_ENV === "development":', process.env.NODE_ENV === "development");
 });
 
 // console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
