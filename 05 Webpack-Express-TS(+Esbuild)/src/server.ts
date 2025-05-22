@@ -1,3 +1,7 @@
+//+ Databases status
+//+ systemctl status mongod
+//+ systemctl status postgresql
+
 // Todo: change name convention to: kebab-case eg: kebab-case.ts
 
 //* Test route: http://localhost:5000, https://localhost:5443/
@@ -8,6 +12,7 @@ import path from "path";
 import http from "http";
 import https from "https";
 import fs from "fs";
+import { X509Certificate } from "crypto";
 
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -110,6 +115,13 @@ const credentials = {
   cert: fs.readFileSync(process.env.SERVER_CRT as string, "utf-8"),
 };
 // console.log("credentials:", credentials);
+
+//* Create an X509Certificate object
+const x509: X509Certificate = new X509Certificate(credentials.cert);
+// console.log("x509:", x509);
+//* Get expiration date
+const validTo: string = x509.validTo; // This gives you the expiration date
+console.log(`Certificate expires on: ${validTo}`);
 
 //* Port
 const portHTTP = (process.env.PORT || 5000) as number;
