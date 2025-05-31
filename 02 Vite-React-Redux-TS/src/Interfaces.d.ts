@@ -1,3 +1,4 @@
+// Todo: move and change to: types/interfaces.ts
 // Types and Interfaces
 import store from "./redux/store";
 
