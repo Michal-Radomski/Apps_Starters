@@ -2,6 +2,7 @@
 //+ systemctl status mongod
 //+ systemctl status postgresql
 
+// Todo: Update security according to: https://github.com/Michal-Radomski/React-Node-courses/blob/main/03%20Advanced%20Node/02/server/server.ts
 // Todo: change name convention to: kebab-case eg: kebab-case.ts
 
 //* Test route: http://localhost:5000, https://localhost:5443/
