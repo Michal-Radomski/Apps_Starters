@@ -92,11 +92,11 @@ pool
   .catch((error) => console.error({ error }));
 
 //* Favicon
-app.get("/favicon.ico", (_req: Request, res: Response) => {
+app.get("/favicon.ico", (_req: Request, res: Response): void => {
   res.sendFile(path.join(__dirname + "/favicon.svg"));
 });
 //* Test route
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response): void => {
   console.log("req.ip:", req.ip);
   res.send("<h1 style='color:blue;text-align:center'>API is running</h1>");
 });
