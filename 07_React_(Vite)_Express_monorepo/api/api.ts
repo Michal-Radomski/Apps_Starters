@@ -1,4 +1,5 @@
 // Todo: Update security according to: https://github.com/Michal-Radomski/React-Node-courses/blob/main/03%20Advanced%20Node/02/server/server.ts
+// Todo: add nodemon.json
 
 import path from "path";
 import http from "http";
