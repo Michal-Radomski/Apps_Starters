@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Button, ButtonGroup } from "react-bootstrap";
 import axios from "axios";
 
+//* Styles: Bootstrap + sass
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.scss";
 import variableColors from "./styles/_App.module.scss";
 import { TestI } from "../../common/CommonInterfaces";
