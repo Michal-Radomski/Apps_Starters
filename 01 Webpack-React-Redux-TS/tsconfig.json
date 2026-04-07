@@ -2,6 +2,7 @@
   "include": ["src"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */

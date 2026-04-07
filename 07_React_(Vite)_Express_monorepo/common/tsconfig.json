@@ -16,7 +16,8 @@
     "skipLibCheck": true,
     "noImplicitThis": true,
     "strictPropertyInitialization": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "ignoreDeprecations": "6.0"
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules"]
